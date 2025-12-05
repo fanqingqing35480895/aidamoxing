@@ -4,8 +4,11 @@
       <!-- 应用基础信息 -->
       <div class="app-basic-info">
         <div class="info-item">
-          <span class="info-label">创建者：</span>
-          <UserInfo :user="app?.user" size="small" />
+          <span class="info-label">生成类型：</span>
+          <a-tag v-if="app?.codeGenType" color="blue">
+            {{ formatCodeGenType(app.codeGenType) }}
+          </a-tag>
+          <span v-else>未知类型</span>
         </div>
         <div class="info-item">
           <span class="info-label">创建时间：</span>
@@ -46,6 +49,7 @@ import { computed } from 'vue'
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons-vue'
 import UserInfo from './UserInfo.vue'
 import { formatTime } from '@/utils/time'
+import { formatCodeGenType } from '../utils/codeGenTypes.ts'
 
 interface Props {
   open: boolean
