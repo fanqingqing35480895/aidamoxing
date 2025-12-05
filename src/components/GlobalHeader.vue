@@ -98,11 +98,11 @@ const menuItems = ref([
     label: '关于',
     title: '关于我们',
   },
-  // {
-  //   key: 'others',
-  //   label: h('a', { href: 'https://www.codefather.cn', target: '_blank' }, '编程导航'),
-  //   title: '编程导航',
-  // },
+  {
+    key: 'others',
+    label: h('a', { href: 'https://www.deepseek.com', target: '_blank' }, 'deepseek'),
+    title: 'deepseek',
+  },
 ])
 
 // 处理菜单点击
