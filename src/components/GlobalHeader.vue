@@ -25,21 +25,11 @@
           <div v-if="loginUserStore.loginUser.id">
             <a-dropdown>
               <a-space>
-                <a-avatar
-                  :src="loginUserStore.loginUser.userAvatar"
-                  :alt="loginUserStore.loginUser.userName || '用户'"
-                  @error="handleAvatarError"
-                >
-                  {{ loginUserStore.loginUser.userName?.charAt(0) || '无' }}
-                </a-avatar>
+                <a-avatar :src="loginUserStore.loginUser.userAvatar" />
                 {{ loginUserStore.loginUser.userName ?? '无名' }}
               </a-space>
               <template #overlay>
                 <a-menu>
-                  <a-menu-item @click="showEditModal = true">
-                    <UserOutlined />
-                    修改信息
-                  </a-menu-item>
                   <a-menu-item @click="doLogout">
                     <LogoutOutlined />
                     退出登录
@@ -54,8 +44,6 @@
         </div>
       </a-col>
     </a-row>
-    <!-- 用户信息编辑模态框 -->
-    <UserInfoEditModal v-model:open="showEditModal" @success="handleEditSuccess" />
   </a-layout-header>
 </template>
 
@@ -65,15 +53,12 @@ import { useRouter } from 'vue-router'
 import { type MenuProps, message } from 'ant-design-vue'
 import { useLoginUserStore } from '@/stores/loginUser.ts'
 import { userLogout } from '@/api/userController.ts'
-import { LogoutOutlined, HomeOutlined, UserOutlined } from '@ant-design/icons-vue'
-import UserInfoEditModal from './UserInfoEditModal.vue'
+import { LogoutOutlined, HomeOutlined } from '@ant-design/icons-vue'
 
 const loginUserStore = useLoginUserStore()
 const router = useRouter()
 // 当前选中菜单
 const selectedKeys = ref<string[]>(['/'])
-// 是否显示编辑模态框
-const showEditModal = ref(false)
 // 监听路由变化，更新当前选中菜单
 router.afterEach((to, from, next) => {
   selectedKeys.value = [to.path]
@@ -99,8 +84,8 @@ const originItems = [
   },
   {
     key: 'others',
-    label: h('a', { href: 'https://www.deepseek.com', target: '_blank' }, '完善话语'),
-    title: '完善话语',
+    label: h('a', { href: 'https://www.codefather.cn', target: '_blank' }, '编程导航'),
+    title: '编程导航',
   },
 ]
 
@@ -144,30 +129,12 @@ const doLogout = async () => {
     message.error('退出登录失败，' + res.data.message)
   }
 }
-
-// 头像加载失败处理
-const handleAvatarError = (e: Event) => {
-  // 头像加载失败时，隐藏图片，显示默认头像（文字）
-  const target = e.target as HTMLImageElement
-  if (target) {
-    target.style.display = 'none'
-  }
-}
-
-// 编辑成功回调
-const handleEditSuccess = async () => {
-  // 刷新用户信息，确保头像更新
-  await loginUserStore.fetchLoginUser()
-}
 </script>
 
 <style scoped>
 .header {
-  background: rgba(0, 0, 0, 0.8);
+  background: #fff;
   padding: 0 24px;
-  border-bottom: 1px solid rgba(0, 240, 255, 0.3);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px rgba(0, 240, 255, 0.1);
 }
 
 .header-left {
@@ -179,73 +146,15 @@ const handleEditSuccess = async () => {
 .logo {
   height: 48px;
   width: 48px;
-  filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.5));
 }
 
 .site-title {
   margin: 0;
   font-size: 18px;
-  color: #00f0ff;
-  text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
+  color: #1890ff;
 }
 
-:deep(.ant-menu-horizontal) {
+.ant-menu-horizontal {
   border-bottom: none !important;
-  background: transparent !important;
-}
-
-:deep(.ant-menu-item) {
-  color: rgba(0, 212, 255, 0.8) !important;
-}
-
-:deep(.ant-menu-item:hover) {
-  color: #00f0ff !important;
-  background: rgba(0, 240, 255, 0.1) !important;
-}
-
-:deep(.ant-menu-item-selected) {
-  color: #00f0ff !important;
-  border-bottom-color: #00f0ff !important;
-}
-
-:deep(.ant-menu-item-selected::after) {
-  border-bottom-color: #00f0ff !important;
-}
-
-.user-login-status :deep(.ant-space) {
-  color: #00d4ff;
-}
-
-.user-login-status :deep(.ant-avatar) {
-  border: 2px solid rgba(0, 240, 255, 0.5);
-  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
-}
-
-.user-login-status :deep(.ant-dropdown-menu) {
-  background: rgba(0, 0, 0, 0.9) !important;
-  border: 1px solid rgba(0, 240, 255, 0.3) !important;
-  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2) !important;
-}
-
-.user-login-status :deep(.ant-menu-item) {
-  color: #00d4ff !important;
-}
-
-.user-login-status :deep(.ant-menu-item:hover) {
-  background: rgba(0, 240, 255, 0.1) !important;
-  color: #00f0ff !important;
-}
-
-.user-login-status :deep(.ant-btn-primary) {
-  background: rgba(0, 240, 255, 0.2);
-  border-color: #00f0ff;
-  color: #00f0ff;
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
-}
-
-.user-login-status :deep(.ant-btn-primary:hover) {
-  background: rgba(0, 240, 255, 0.3);
-  border-color: #00f0ff;
-  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
 }
 </style>
