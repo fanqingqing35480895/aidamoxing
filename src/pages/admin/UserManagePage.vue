@@ -155,7 +155,158 @@ onMounted(() => {
 <style scoped>
 #userManagePage {
   padding: 24px;
-  background: white;
+  background: rgba(0, 0, 0, 0.6);
   margin-top: 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
+}
+
+:deep(.ant-form) {
+  background: transparent;
+}
+
+:deep(.ant-form-item-label > label) {
+  color: #00d4ff;
+}
+
+:deep(.ant-input) {
+  background: rgba(0, 0, 0, 0.6) !important;
+  border-color: rgba(0, 240, 255, 0.3) !important;
+  color: #ffffff !important;
+}
+
+:deep(.ant-input:focus),
+:deep(.ant-input-focused) {
+  border-color: #00f0ff !important;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3) !important;
+}
+
+:deep(.ant-input::placeholder) {
+  color: rgba(0, 212, 255, 0.5) !important;
+}
+
+:deep(.ant-btn-primary) {
+  background: rgba(0, 240, 255, 0.2);
+  border-color: #00f0ff;
+  color: #00f0ff;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+:deep(.ant-btn-primary:hover) {
+  background: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
+}
+
+:deep(.ant-table) {
+  background: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+}
+
+:deep(.ant-table-thead > tr > th) {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 240, 255, 0.3);
+  color: #00f0ff;
+}
+
+:deep(.ant-table-tbody > tr > td) {
+  border-color: rgba(0, 240, 255, 0.2);
+  color: #ffffff;
+}
+
+:deep(.ant-table-tbody > tr:hover > td) {
+  background: rgba(0, 240, 255, 0.15) !important;
+}
+
+:deep(.ant-table-tbody > tr.ant-table-row-selected > td),
+:deep(.ant-table-tbody > tr.ant-table-row-selected:hover > td) {
+  background: rgba(0, 240, 255, 0.2) !important;
+}
+
+:deep(.ant-table-tbody > tr) {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+:deep(.ant-pagination-item) {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+:deep(.ant-pagination-item a) {
+  color: #00d4ff;
+}
+
+:deep(.ant-pagination-item-active) {
+  background: rgba(0, 240, 255, 0.2);
+  border-color: #00f0ff;
+}
+
+:deep(.ant-pagination-item-active a) {
+  color: #00f0ff;
+}
+
+:deep(.ant-pagination-prev),
+:deep(.ant-pagination-next) {
+  color: #00d4ff;
+}
+
+:deep(.ant-pagination-prev:hover),
+:deep(.ant-pagination-next:hover) {
+  color: #00f0ff;
+}
+
+:deep(.ant-btn-danger) {
+  background: rgba(255, 77, 79, 0.2);
+  border-color: #ff4d4f;
+  color: #ff4d4f;
+}
+
+:deep(.ant-btn-danger:hover) {
+  background: rgba(255, 77, 79, 0.3);
+  box-shadow: 0 0 15px rgba(255, 77, 79, 0.3);
+}
+
+:deep(.ant-divider) {
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+:deep(.ant-tag) {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.3);
+  color: #00f0ff;
+}
+
+:deep(.ant-image) {
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 4px;
+}
+
+/* 固定列背景色覆盖 */
+:deep(.ant-table-cell-fix-left),
+:deep(.ant-table-cell-fix-right) {
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+:deep(.ant-table-thead .ant-table-cell-fix-left),
+:deep(.ant-table-thead .ant-table-cell-fix-right) {
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+:deep(.ant-table-tbody .ant-table-cell-fix-left),
+:deep(.ant-table-tbody .ant-table-cell-fix-right) {
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 固定列在hover和选中状态下的背景色 */
+:deep(.ant-table-tbody > tr:hover .ant-table-cell-fix-left),
+:deep(.ant-table-tbody > tr:hover .ant-table-cell-fix-right) {
+  background: rgba(0, 240, 255, 0.15) !important;
+}
+
+:deep(.ant-table-tbody > tr.ant-table-row-selected .ant-table-cell-fix-left),
+:deep(.ant-table-tbody > tr.ant-table-row-selected .ant-table-cell-fix-right),
+:deep(.ant-table-tbody > tr.ant-table-row-selected:hover .ant-table-cell-fix-left),
+:deep(.ant-table-tbody > tr.ant-table-row-selected:hover .ant-table-cell-fix-right) {
+  background: rgba(0, 240, 255, 0.2) !important;
 }
 </style>

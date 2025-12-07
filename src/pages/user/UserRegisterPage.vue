@@ -85,27 +85,76 @@ const handleSubmit = async (values: API.UserRegisterRequest) => {
 
 <style scoped>
 #userRegisterPage {
-  background: white;
+  background: rgba(0, 0, 0, 0.6);
   max-width: 720px;
   padding: 24px;
   margin: 24px auto;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
 }
 
 .title {
   text-align: center;
   margin-bottom: 16px;
+  color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
 }
 
 .desc {
   text-align: center;
-  color: #bbb;
+  color: rgba(0, 212, 255, 0.7);
   margin-bottom: 16px;
 }
 
 .tips {
   margin-bottom: 16px;
-  color: #bbb;
+  color: rgba(0, 212, 255, 0.7);
   font-size: 13px;
   text-align: right;
+}
+
+.tips a {
+  color: #00d4ff;
+  text-decoration: none;
+}
+
+.tips a:hover {
+  color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+:deep(.ant-form-item-label > label) {
+  color: #00d4ff;
+}
+
+:deep(.ant-input),
+:deep(.ant-input-password) {
+  background: rgba(0, 0, 0, 0.6) !important;
+  border-color: rgba(0, 240, 255, 0.3) !important;
+  color: #ffffff !important;
+}
+
+:deep(.ant-input:focus),
+:deep(.ant-input-focused),
+:deep(.ant-input-password:focus) {
+  border-color: #00f0ff !important;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3) !important;
+}
+
+:deep(.ant-input::placeholder) {
+  color: rgba(0, 212, 255, 0.5) !important;
+}
+
+:deep(.ant-btn-primary) {
+  background: rgba(0, 240, 255, 0.2);
+  border-color: #00f0ff;
+  color: #00f0ff;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+:deep(.ant-btn-primary:hover) {
+  background: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
 }
 </style>

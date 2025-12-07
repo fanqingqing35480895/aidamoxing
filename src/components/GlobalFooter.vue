@@ -21,17 +21,29 @@
 
 <style scoped>
 .footer {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(10px);
   text-align: center;
   padding: 20px;
   margin-top: 40px;
-  border-top: 1px solid rgba(102, 126, 234, 0.1);
+  border-top: 1px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 -2px 20px rgba(0, 240, 255, 0.1);
 }
 
 .copyright {
   margin: 0;
-  color: #666;
+  color: rgba(0, 212, 255, 0.7);
   font-size: 14px;
+}
+
+.author-link {
+  color: #00d4ff;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.author-link:hover {
+  color: #00f0ff;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.8);
 }
 </style>

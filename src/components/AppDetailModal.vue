@@ -90,6 +90,7 @@ const handleDelete = () => {
 <style scoped>
 .app-detail-content {
   padding: 8px 0;
+  color: #ffffff;
 }
 
 .app-basic-info {
@@ -104,13 +105,81 @@ const handleDelete = () => {
 
 .info-label {
   width: 80px;
-  color: #666;
+  color: #00d4ff;
   font-size: 14px;
   flex-shrink: 0;
 }
 
 .app-actions {
   padding-top: 16px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+:deep(.ant-modal-content) {
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+:deep(.ant-modal-header) {
+  background: rgba(0, 0, 0, 0.9);
+  border-bottom-color: rgba(0, 240, 255, 0.3);
+}
+
+:deep(.ant-modal-title) {
+  color: #00f0ff;
+}
+
+:deep(.ant-modal-body) {
+  color: #ffffff;
+}
+
+:deep(.ant-btn-primary) {
+  background: rgba(0, 240, 255, 0.2);
+  border-color: #00f0ff;
+  color: #00f0ff;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+:deep(.ant-btn-primary:hover) {
+  background: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
+}
+
+:deep(.ant-btn-danger) {
+  background: rgba(255, 77, 79, 0.2);
+  border-color: #ff4d4f;
+  color: #ff4d4f;
+}
+
+:deep(.ant-btn-danger:hover) {
+  background: rgba(255, 77, 79, 0.3);
+  box-shadow: 0 0 15px rgba(255, 77, 79, 0.3);
+}
+
+:deep(.ant-tag) {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: rgba(0, 240, 255, 0.3);
+  color: #00f0ff;
+}
+
+:deep(.ant-popconfirm) {
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+}
+
+:deep(.ant-popconfirm-inner-content) {
+  color: #ffffff;
+}
+
+:deep(.ant-popconfirm-buttons .ant-btn) {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 240, 255, 0.3);
+  color: #00d4ff;
+}
+
+:deep(.ant-popconfirm-buttons .ant-btn-primary) {
+  background: rgba(0, 240, 255, 0.2);
+  border-color: #00f0ff;
+  color: #00f0ff;
 }
 </style>

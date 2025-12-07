@@ -29,6 +29,11 @@ withDefaults(defineProps<Props>(), {
 
 .user-name {
   font-size: 14px;
-  color: #1a1a1a;
+  color: #00d4ff;
+}
+
+:deep(.ant-avatar) {
+  border: 2px solid rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
 }
 </style>
