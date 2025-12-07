@@ -281,16 +281,12 @@ onMounted(() => {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background:
-    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 8%, #e2e8f0 20%, #cbd5e1 100%),
-    radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.08) 0%, transparent 50%);
+  background: #000000;
   position: relative;
   overflow: hidden;
 }
 
-/* 科技感网格背景 */
+/* 科技感网格背景 - 荧光蓝 */
 #homePage::before {
   content: '';
   position: absolute;
@@ -299,10 +295,10 @@ onMounted(() => {
   right: 0;
   bottom: 0;
   background-image:
-    linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-    linear-gradient(rgba(139, 92, 246, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(0, 212, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.05) 1px, transparent 1px);
   background-size:
     100px 100px,
     100px 100px,
@@ -312,7 +308,7 @@ onMounted(() => {
   animation: gridFloat 20s ease-in-out infinite;
 }
 
-/* 动态光效 */
+/* 动态光效 - 荧光蓝 */
 #homePage::after {
   content: '';
   position: absolute;
@@ -323,19 +319,18 @@ onMounted(() => {
   background:
     radial-gradient(
       600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-      rgba(59, 130, 246, 0.08) 0%,
-      rgba(139, 92, 246, 0.06) 40%,
+      rgba(0, 240, 255, 0.15) 0%,
+      rgba(0, 212, 255, 0.1) 40%,
       transparent 80%
     ),
-    linear-gradient(45deg, transparent 30%, rgba(59, 130, 246, 0.04) 50%, transparent 70%),
-    linear-gradient(-45deg, transparent 30%, rgba(139, 92, 246, 0.04) 50%, transparent 70%);
+    linear-gradient(45deg, transparent 30%, rgba(0, 240, 255, 0.05) 50%, transparent 70%),
+    linear-gradient(-45deg, transparent 30%, rgba(0, 212, 255, 0.05) 50%, transparent 70%);
   pointer-events: none;
   animation: lightPulse 8s ease-in-out infinite alternate;
 }
 
 @keyframes gridFloat {
-  0%,
-  100% {
+  0%, 100% {
     transform: translate(0, 0);
   }
   50% {
@@ -362,14 +357,12 @@ onMounted(() => {
   box-sizing: border-box;
 }
 
-/* 移除居中光束效果 */
-
 /* 英雄区域 */
 .hero-section {
   text-align: center;
   padding: 80px 0 60px;
   margin-bottom: 28px;
-  color: #1e293b;
+  color: #ffffff;
   position: relative;
   overflow: hidden;
 }
@@ -382,9 +375,9 @@ onMounted(() => {
   right: 0;
   bottom: 0;
   background:
-    radial-gradient(ellipse 800px 400px at center, rgba(59, 130, 246, 0.12) 0%, transparent 70%),
-    linear-gradient(45deg, transparent 30%, rgba(139, 92, 246, 0.05) 50%, transparent 70%),
-    linear-gradient(-45deg, transparent 30%, rgba(16, 185, 129, 0.04) 50%, transparent 70%);
+    radial-gradient(ellipse 800px 400px at center, rgba(0, 240, 255, 0.2) 0%, transparent 70%),
+    linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.1) 50%, transparent 70%),
+    linear-gradient(-45deg, transparent 30%, rgba(0, 240, 255, 0.1) 50%, transparent 70%);
   animation: heroGlow 10s ease-in-out infinite alternate;
 }
 
@@ -399,21 +392,12 @@ onMounted(() => {
   }
 }
 
-@keyframes rotate {
-  0% {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  100% {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
 .hero-title {
   font-size: 56px;
   font-weight: 700;
   margin: 0 0 20px;
   line-height: 1.2;
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #10b981 100%);
+  background: linear-gradient(135deg, #00f0ff 0%, #00d4ff 50%, #00b8ff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -421,25 +405,29 @@ onMounted(() => {
   position: relative;
   z-index: 2;
   animation: titleShimmer 3s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
+  filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.8));
 }
 
 @keyframes titleShimmer {
-  0%,
-  100% {
+  0%, 100% {
     background-position: 0% 50%;
+    filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.8));
   }
   50% {
     background-position: 100% 50%;
+    filter: drop-shadow(0 0 20px rgba(0, 240, 255, 1));
   }
 }
 
 .hero-description {
   font-size: 20px;
   margin: 0;
-  opacity: 0.8;
-  color: #64748b;
+  opacity: 0.9;
+  color: #00d4ff;
   position: relative;
   z-index: 2;
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
 /* 输入区域 */
@@ -451,17 +439,35 @@ onMounted(() => {
 
 .prompt-input {
   border-radius: 16px;
-  border: none;
+  border: 2px solid rgba(0, 240, 255, 0.3);
   font-size: 16px;
   padding: 20px 60px 20px 20px;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(20px);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(0, 240, 255, 0.2),
+    inset 0 0 20px rgba(0, 240, 255, 0.1);
+  color: #ffffff;
+  transition: all 0.3s;
 }
 
-.prompt-input:focus {
-  background: rgba(255, 255, 255, 1);
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+.prompt-input :deep(.ant-input) {
+  background: transparent !important;
+  border: none !important;
+  color: #ffffff !important;
+}
+
+.prompt-input :deep(.ant-input::placeholder) {
+  color: rgba(0, 212, 255, 0.5) !important;
+}
+
+.prompt-input:focus-within {
+  border-color: #00f0ff;
+  box-shadow:
+    0 15px 50px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(0, 240, 255, 0.4),
+    inset 0 0 30px rgba(0, 240, 255, 0.2);
   transform: translateY(-2px);
 }
 
@@ -474,6 +480,18 @@ onMounted(() => {
   align-items: center;
 }
 
+.input-actions :deep(.ant-btn-primary) {
+  background: rgba(0, 240, 255, 0.2);
+  border-color: #00f0ff;
+  color: #00f0ff;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.input-actions :deep(.ant-btn-primary:hover) {
+  background: rgba(0, 240, 255, 0.3);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.5);
+}
+
 /* 快捷按钮 */
 .quick-actions {
   display: flex;
@@ -483,40 +501,41 @@ onMounted(() => {
   flex-wrap: wrap;
 }
 
-.quick-actions .ant-btn {
+.quick-actions :deep(.ant-btn) {
   border-radius: 25px;
   padding: 8px 20px;
   height: auto;
-  background: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  color: #475569;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 240, 255, 0.4);
+  color: #00d4ff;
   backdrop-filter: blur(15px);
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
 }
 
-.quick-actions .ant-btn::before {
+.quick-actions :deep(.ant-btn)::before {
   content: '';
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.3), transparent);
   transition: left 0.5s;
 }
 
-.quick-actions .ant-btn:hover::before {
+.quick-actions :deep(.ant-btn):hover::before {
   left: 100%;
 }
 
-.quick-actions .ant-btn:hover {
-  background: rgba(255, 255, 255, 0.9);
-  border-color: rgba(59, 130, 246, 0.4);
-  color: #3b82f6;
+.quick-actions :deep(.ant-btn):hover {
+  background: rgba(0, 240, 255, 0.1);
+  border-color: #00f0ff;
+  color: #00f0ff;
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 240, 255, 0.4);
 }
 
 /* 区域标题 */
@@ -528,7 +547,8 @@ onMounted(() => {
   font-size: 32px;
   font-weight: 600;
   margin-bottom: 32px;
-  color: #1e293b;
+  color: #00f0ff;
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.6);
 }
 
 /* 我的作品网格 */
@@ -552,6 +572,39 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   margin-top: 32px;
+}
+
+.pagination-wrapper :deep(.ant-pagination-item) {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(0, 240, 255, 0.3);
+}
+
+.pagination-wrapper :deep(.ant-pagination-item a) {
+  color: #00d4ff;
+}
+
+.pagination-wrapper :deep(.ant-pagination-item:hover) {
+  border-color: #00f0ff;
+  background: rgba(0, 240, 255, 0.1);
+}
+
+.pagination-wrapper :deep(.ant-pagination-item-active) {
+  background: rgba(0, 240, 255, 0.2);
+  border-color: #00f0ff;
+}
+
+.pagination-wrapper :deep(.ant-pagination-item-active a) {
+  color: #00f0ff;
+}
+
+.pagination-wrapper :deep(.ant-pagination-prev),
+.pagination-wrapper :deep(.ant-pagination-next) {
+  color: #00d4ff;
+}
+
+.pagination-wrapper :deep(.ant-pagination-prev:hover),
+.pagination-wrapper :deep(.ant-pagination-next:hover) {
+  color: #00f0ff;
 }
 
 /* 响应式设计 */
